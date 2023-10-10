@@ -1,4 +1,4 @@
-function [T,Y] = funkciya1(tau1,tau2,t)
+function [T,Y] = funkciya_1(tau1,tau2,t)
 i = 1;
 while t < 100 %запускаем цикл вычисления всех значений у в заданных пределах
     if (t<0)

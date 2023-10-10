@@ -1,4 +1,4 @@
-function [s] = funkciya2(n,d,p,r,s,l,k,M,v)
+function [s] = funkciya_2(n,d,p,r,s,l,k,M,v)
 while n < 111
     if n-k<0
         n1 = 1;
