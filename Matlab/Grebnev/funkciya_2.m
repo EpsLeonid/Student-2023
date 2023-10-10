@@ -1,4 +1,4 @@
-function [s] = filter1(n,n1,n2,n3,n4,d,p,r,s,l,k,M,v)
+function [s] = funkciya2(n,d,p,r,s,l,k,M,v)
 while n < 111
     if n-k<0
         n1 = 1;
