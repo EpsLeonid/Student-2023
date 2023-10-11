@@ -1,29 +1,37 @@
-function [s] = funkciya_2(n,d,p,r,s,l,k,M,v)
-while n < 111
-    if n-k<0
-        n1 = 1;
-    else
-        n1 = n;
+function [s] = funkciya_2(l,k,M,Y)
+n = length(Y); % получаем длину массивов
+d = deal(zeros(1,n)); % вводим новые массивы с длинами, равной длине массива Y
+p = deal(zeros(1,n));
+r = deal(zeros(1,n));
+s = deal(zeros(1,n));
+i = 1;
+while i < n+1 
+    d(i) = Y(i); % присваиваем d(i) значение v(i)
+    if i-k >= 1
+    d(i) = d(i) - Y(i - k); % вычитаем из d(i) значение v(i-k), если i-k >= 1
     end
-    if n-l<1
-        n2 = 1;
-    else
-        n2 = n;
+    if i-l >= 1
+    d(i) = d(i) - Y(i - l); % вычитаем из d(i) значение v(i-L), если i-L >= 1
     end
-    if n-k-l<1
-        n3 = 1;
-    else
-        n3 = n;
+    if i-l-k >= 1
+    d(i) = d(i) + Y(i - l - k); % прибавляем к d(i) значение v(i-L-k), если i-L-k >= 1
     end
-    if n-1<1
-        n4 = 1;
-    else
-        n4 = n;
-    end
-    d(n) = v(n)-v(n1)-v(n2)+v(n3);
-    p(n) = p(n4) + d(n);
-    r(n) = p(n) + M*d(n);
-    s(n) = s(n4) + r(n);
-    n = n+1;
+    i = i+1;
+end
+p(1) = d(1); % согласно используемым формулам, присваиваем первым элементам массивов следующие значения
+r(1) = p(1) + M*d(1); 
+s(1) = r(1); 
+j = 2;
+while j < n+1
+    p(j) = p(j-1) + d(j);
+    r(j) = p(j) + M*d(j); 
+    s(j) = s(j-1) + r(j); 
+    j = j+1;
+end
+
+maxY = max(Y); % для удобного вида массшатбируем по максимальным значениям
+maxS = max(s); 
+for i=1:n
+s(i) = maxY * s(i) / maxS; 
 end
 end
