@@ -22,39 +22,6 @@ for n = 1:N
   end
 
 
-function y = func123(A,ta1,ta2,t)
- y = zeros(1,length(t));
- for i = 1 : length(t)
-     if(t(i) >= 0)
-         y(i) = A*(exp(-t(i)/ta1)-exp(-t(i)/ta2));
-     else
-         y(i) = 0;
-     end
- end
-
-function [s] = func123(M,v,k,l)
-N = length(v);
-d = zeros(N);
-r = zeros(N);
-s = zeros(N);
-p = zeros(N);
-n = 1;
-% Цикл расчета фильтра
-for n=1:N
-    d(n) = v(n); 
-    if n-k >= 1
-    d(n) = d(n) - v(n - k); 
-    end
-    if n-l >= 1
-    d(n) = d(n) - v(n - l); 
-    end
-    if n-l-k >= 1
-    d(n) = d(n) + v(n - l - k); 
-    end
-
-end
-
-
 % Вывод графиков
 subplot(3,1,1)
 plot(v)
@@ -83,3 +50,5 @@ title('Входной сигнал')
 subplot(3,1,2)
 plot(s) 
 title('Выходной сигнал s(n)')
+end
+
