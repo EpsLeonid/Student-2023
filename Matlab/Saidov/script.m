@@ -1,10 +1,9 @@
 A=1;
 tau1=16;
 tau2=5;
-
+t = 1
 k = 13;
 L = 6;
-
 t_step=1;
 t_spread=150;
 %M=tau1/t_step;
