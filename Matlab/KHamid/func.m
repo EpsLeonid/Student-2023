@@ -1,5 +1,5 @@
-<<<<<<< .mine
-function y = func(A,ta1,ta2,t)
+
+function y = func123(A,ta1,ta2,t)
  y = zeros(1,length(t));
 
 % Цикл расчета фильтра
@@ -21,8 +21,8 @@ for n = 1:N
      s(n) = s(n-1) + r(n);
   end
 
-||||||| .r56
-function y = func(A,ta1,ta2,t)
+
+function y = func123(A,ta1,ta2,t)
  y = zeros(1,length(t));
  for i = 1 : length(t)
      if(t(i) >= 0)
@@ -31,8 +31,8 @@ function y = func(A,ta1,ta2,t)
          y(i) = 0;
      end
  end
-=======
-function [s] = func(M,v,k,l)
+
+function [s] = func123(M,v,k,l)
 N = length(v);
 d = zeros(N);
 r = zeros(N);
@@ -51,9 +51,9 @@ for n=1:N
     if n-l-k >= 1
     d(n) = d(n) + v(n - l - k); 
     end
->>>>>>> .r60
+
 end
-<<<<<<< .mine
+
 
 % Вывод графиков
 subplot(3,1,1)
@@ -66,8 +66,7 @@ title('Выходной сигнал r(n)')
 
 subplot(3,1,3)
 plot(s) 
-title('Выходной сигнал s(n)')||||||| .r56
-=======
+title('Выходной сигнал s(n)')
 p(1) = d(1);
 r(1) = p(1) + M*d(1); 
 s(1) = r(1); 
@@ -83,4 +82,4 @@ title('Входной сигнал')
 
 subplot(3,1,2)
 plot(s) 
-title('Выходной сигнал s(n)')>>>>>>> .r60
+title('Выходной сигнал s(n)')
