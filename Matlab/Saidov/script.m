@@ -11,7 +11,7 @@ t_spread=150;
 M = 16;
 
 
-[y,t]=expanenta(A, tau1,tau2,t_step,t_spread)
+[y,t]=expanenta(A, tau1,tau2,t_step,t_spread);
 t=0:t_step:t_spread;
 s= zadaniya003(y, k, L, M);
 
