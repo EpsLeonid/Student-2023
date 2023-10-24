@@ -4,7 +4,6 @@ module signals
 	input wire [7:0] A,
 	input wire [7:0] B,
 	//outputs
-	output wire [7:0] C,
-);
-	assign C = A*B;
+	output wire [15:0] C);
+assign C = A*B;
 endmodule
