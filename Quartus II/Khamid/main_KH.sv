@@ -1,5 +1,5 @@
 // Модуль для умножения двух чисел
-module multiplier(
+module main_KH(
 
 // Входные порты
 input logic [7:0] A,
