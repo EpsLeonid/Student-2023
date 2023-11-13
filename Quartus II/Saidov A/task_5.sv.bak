@@ -1,0 +1,29 @@
+parameter DATA_WIDTH = 8;
+parameter OUTPUT_WIDTH = 16;
+
+// параметризованный модуль регистра
+module task_5 #(
+parameter DATA_WIDTH,
+parameter OUTPUT_WIDTH
+)(
+input logic clk,
+
+input logic [DATA_WIDTH-1:0] a, b, c,
+
+output logic [OUTPUT_WIDTH-1:0] data_out
+);
+
+// регистр для промежуточных расчетов
+logic [OUTPUT_WIDTH-1:0] result;
+
+always_ff @(posedge clk) begin
+
+// на каждом такте
+result <= a * b + c;
+
+// результат записывается в широкий регистр
+data_out <= result;
+
+end
+
+endmodule
