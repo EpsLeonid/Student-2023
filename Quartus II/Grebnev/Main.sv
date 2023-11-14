@@ -1,9 +1,9 @@
 import package_settings::*;
 module Main(A,B,C,D,E,F,d,clk,out,DATA_OUT);
 
-	input wire [SIZE_A-1:0] A,
-	input wire [SIZE_B-1:0] B,
-	input wire [SIZE_C-1:0] C,
+	input wire [SIZE_A-1:0] A;
+	input wire [SIZE_B-1:0] B;
+	input wire [SIZE_C-1:0] C;
     input wire [7:0] D;
     input wire [7:0] E;
     input d;
