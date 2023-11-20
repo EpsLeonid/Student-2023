@@ -1,5 +1,5 @@
 import package_settings::*;
-module main(A,B,C,D,E,F,d,clk,out,DATA_OUT);
+module Main(A,B,C,D,E,F,d,clk,out,DATA_OUT);
 
 	input wire [7:0] D;
 	input wire [7:0] E;
