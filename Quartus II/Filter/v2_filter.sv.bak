@@ -1,0 +1,14 @@
+module v2_filter(
+		.clk                                                  (clk),
+		.reset                                                (reset),
+		.input_data                                           (output_data_exp_sig_gen),
+		.output_data                                          (output_data_v2));
+integer [tau1_2-1] tau1_2;
+integer [tau2_2-1] tau2_2;
+integer [k_2-1] k_2;
+integer [l_2-1] l_2;
+integer [M_2-1] M_2;
+integer i;
+	always @(posedge clk )
+	begin
+	
