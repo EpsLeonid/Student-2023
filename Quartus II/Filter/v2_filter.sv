@@ -1,9 +1,9 @@
 import package_settings::*;
 module v2_filter(
-		.clk                                                  (clk),
-		.reset                                                (reset),
-		.input_data                                           (output_data_exp_sig_gen),
-		.output_data                                          (output_data_v2));
+		input  wire												clk,
+		input  wire												reset,
+		input wire [SIZE_ADC_DATA-1:0]							output_data_exp_sig_gen,
+		output wire [SIZE_FILTER_DATA-1:0]						output_data_v2);
 logic [SIZE_ADC_DATA-1:0] d;
 logic [SIZE_ADC_DATA-1:0] p;
 logic [SIZE_ADC_DATA-1:0] r;
@@ -28,13 +28,13 @@ integer j;
 		while (i < n + 1) begin
 			d[i] = input_data[i];
 			if (i-k_2 >= 1) begin
-				d[i] = d[i] - input_data[i - k]; // вычитаем из d(i) значение v(i-k), если i-k >= 1
+				d[i] = d[i] - input_data[i - k_2]; // вычитаем из d(i) значение v(i-k), если i-k >= 1
 			end
 			if (i-l_2 >= 1) begin
-				d[i] = d[i] - input_data[i - l]; // вычитаем из d(i) значение v(i-L), если i-L >= 1
+				d[i] = d[i] - input_data[i - l_2]; // вычитаем из d(i) значение v(i-L), если i-L >= 1
 			end
 			if (i-l_2-k_2 >= 1) begin
-				d[i] = d[i] + input_data[i - l - k]; // прибавляем к d(i) значение v(i-L-k), если i-L-k >= 1
+				d[i] = d[i] + input_data[i - l_2 - k_2]; // прибавляем к d(i) значение v(i-L-k), если i-L-k >= 1
 			end
 			i = i+1;
 		end

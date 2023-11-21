@@ -1,3 +1,0 @@
-v1
-DSP_BALANCING_IMPLEMENTATION,LOGIC_ELEMENTS,reg8:comb_5|lpm_mult:Mult0|mult_4et:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,LOGIC_ELEMENTS,signals:comb_3|lpm_mult:Mult0|mult_4et:auto_generated|mac_out2,

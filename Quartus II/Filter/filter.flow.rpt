@@ -1,5 +1,5 @@
 Flow report for filter
-Mon Nov 20 19:16:14 2023
+Tue Nov 21 13:36:55 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Flow Failed - Mon Nov 20 19:16:14 2023          ;
+; Flow Status                        ; Flow Failed - Tue Nov 21 13:36:55 2023          ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; filter                                          ;
 ; Top-level Entity Name              ; filter                                          ;
@@ -66,7 +66,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/20/2023 19:16:14 ;
+; Start date & time ; 11/21/2023 13:36:55 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; filter              ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 145234201841005.170048257401788 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 145234201841005.170054861502348 ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top        ;
@@ -89,8 +89,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:00     ; 1.0                     ; 4633 MB             ; 00:00:01                           ;
-; Total                ; 00:00:00     ; --                      ; --                  ; 00:00:01                           ;
+; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 4633 MB             ; 00:00:01                           ;
+; Total                ; 00:00:01     ; --                      ; --                  ; 00:00:01                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
