@@ -6,12 +6,14 @@ module reg8 (
 	input clk,
 	//outputs
 	output reg [SIZE_DATA_OUT-1:0] DATA_OUT );
-	wire [SIZE_DATA_OUT-1:0] AB;
-	wire [SIZE_DATA_OUT-1:0] ABC;
-	assign AB = A * B;
-	assign ABC = AB + C;
-always @(posedge clk)
+	
+	wire 	[SIZE_DATA_OUT-1:0] AB;
+	assign AB[15:0] = A[7:0]*B[7:0]+C[7:0];
+	
+
+	
+always @(clk)
 	begin
-		DATA_OUT[15:0] <= ABC;
+		DATA_OUT[15:0] <= AB[15:0];
 	end
 endmodule

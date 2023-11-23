@@ -5,5 +5,5 @@ module signals
 	input wire [7:0] E,
 	//outputs
 	output wire [15:0] F);
-assign F = D*E;
+assign F[15:0] = D[7:0] * E[7:0];
 endmodule
