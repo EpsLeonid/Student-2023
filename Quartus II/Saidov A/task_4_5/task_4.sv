@@ -7,11 +7,14 @@ input wire [SIZE_C-1:0] C, // присваиваем сигналу C разме
 output wire [SIZE_DATA_OUT-1:0] DATA_OUT // присваиваем сигналу DATA_OUT размер 16-битной шины из файла параметров
 );
 
-// описываем работу D-триггера, работающего по положительному фронту сигнала clk
+wire [15:0] DATA0;
 
-always_ff @(posedge clk) begin
+always@(!clk) begin
+	DATA0[15:0] = A[7:0] * B[7:0] + C[7:0]; 
+end
 
-DATA_OUT[15:0] <= A[7:0] * B[7:0] + C[7:0];  
+always@(clk) begin
+	DATA_OUT[15:0] <= DATA0[15:0];  
 end
 
 endmodule
