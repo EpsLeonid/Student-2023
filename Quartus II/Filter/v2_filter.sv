@@ -1,15 +1,16 @@
 import package_settings::*;
+import package_settings_v2::*;
 module v2_filter(
 		input  wire												clk,
 		input  wire												reset,
-		input wire [SIZE_ADC_DATA-1:0]							output_data_exp_sig_gen,
-		output wire [SIZE_FILTER_DATA-1:0]						output_data_v2);
+		input wire [SIZE_ADC_DATA-1:0]							input_data,
+		output wire [SIZE_FILTER_DATA-1:0]						output_data);
 logic [SIZE_ADC_DATA-1:0] d;
 logic [SIZE_ADC_DATA-1:0] p;
 logic [SIZE_ADC_DATA-1:0] r;
 logic [SIZE_ADC_DATA-1:0] s;
 integer n;
-assign n = SIZE_ADC_DATA-1;
+assign n = SIZE_ADC_DATA - 1;
 integer M_2;
 assign M_2 = M_2;
 integer l_2;
@@ -25,15 +26,15 @@ integer j;
 	end
 	else begin
 		i = 0;
-		while (i < n + 1) begin
+		while (i < 14) begin
 			d[i] = input_data[i];
-			if (i-k_2 >= 1) begin
+			if (i-k_2 >= 0) begin
 				d[i] = d[i] - input_data[i - k_2]; // вычитаем из d(i) значение v(i-k), если i-k >= 1
 			end
-			if (i-l_2 >= 1) begin
+			if (i-l_2 >= 0) begin
 				d[i] = d[i] - input_data[i - l_2]; // вычитаем из d(i) значение v(i-L), если i-L >= 1
 			end
-			if (i-l_2-k_2 >= 1) begin
+			if (i-l_2-k_2 >= 0) begin
 				d[i] = d[i] + input_data[i - l_2 - k_2]; // прибавляем к d(i) значение v(i-L-k), если i-L-k >= 1
 			end
 			i = i+1;
@@ -43,13 +44,13 @@ integer j;
 	r[1] = p[1] + M_2*d[1]; 
 	s[1] = r[1]; 
 	j = 2;
-	while (j < n+1) begin
+	while (j < 14) begin
 		p[j] = p[j-1] + d[j];
 		r[j] = p[j] + M_2*d[j]; 
 		s[j] = s[j-1] + r[j]; 
 		j = j+1;
 	end
-	assign output_data_v2 = s;
+	output_data <= s;
 	end
 	endmodule
 	
