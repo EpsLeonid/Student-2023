@@ -1,10 +1,9 @@
-import package_settings::*;
 import package_settings_v2::*;
 module v2_filter(
 		input  wire												clk,
 		input  wire												reset,
 		input wire [SIZE_ADC_DATA-1:0]							input_data,
-		output wire [SIZE_FILTER_DATA-1:0]						output_data);
+		output wire [SIZE_ADC_DATA-1:0]						output_data);
 logic [SIZE_ADC_DATA-1:0] d;
 logic [SIZE_ADC_DATA-1:0] p;
 logic [SIZE_ADC_DATA-1:0] r;
@@ -12,16 +11,13 @@ logic [SIZE_ADC_DATA-1:0] s;
 integer n;
 assign n = SIZE_ADC_DATA - 1;
 integer M_2;
-assign M_2 = M_2;
 integer l_2;
-assign l_2 = l_2;
 integer k_2;
-assign k_2 = k_2; 
 integer i;
 integer j;
 	always @(posedge clk or negedge reset) begin
 	if(!reset) begin
-		output_data = 0;
+		output_data <= 0;
 		i = 0;
 	end
 	else begin
