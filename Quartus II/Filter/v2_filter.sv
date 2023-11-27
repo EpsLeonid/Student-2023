@@ -23,15 +23,15 @@ integer j;
 	else begin
 		i = 0;
 		while (i < 14) begin
-			d[i] = input_data[i];
+			d[i] <= input_data[i];
 			if (i-k_2 >= 0) begin
-				d[i] = d[i] - input_data[i - k_2]; // вычитаем из d(i) значение v(i-k), если i-k >= 1
+				d[i] <= d[i] - input_data[i - k_2]; // вычитаем из d(i) значение v(i-k), если i-k >= 1
 			end
 			if (i-l_2 >= 0) begin
-				d[i] = d[i] - input_data[i - l_2]; // вычитаем из d(i) значение v(i-L), если i-L >= 1
+				d[i] <= d[i] - input_data[i - l_2]; // вычитаем из d(i) значение v(i-L), если i-L >= 1
 			end
 			if (i-l_2-k_2 >= 0) begin
-				d[i] = d[i] + input_data[i - l_2 - k_2]; // прибавляем к d(i) значение v(i-L-k), если i-L-k >= 1
+				d[i] <= d[i] + input_data[i - l_2 - k_2]; // прибавляем к d(i) значение v(i-L-k), если i-L-k >= 1
 			end
 			i = i+1;
 		end
@@ -41,9 +41,9 @@ integer j;
 	s[1] = r[1]; 
 	j = 2;
 	while (j < 14) begin
-		p[j] = p[j-1] + d[j];
-		r[j] = p[j] + M_2*d[j]; 
-		s[j] = s[j-1] + r[j]; 
+		p[j] <= p[j-1] + d[j];
+		r[j] <= p[j] + M_2*d[j]; 
+		s[j] <= s[j-1] + r[j]; 
 		j = j+1;
 	end
 	output_data <= s;
