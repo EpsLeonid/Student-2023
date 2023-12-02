@@ -1,6 +1,6 @@
 # -------------------------------------------------------------------------- #
 #
-# Copyright (C) 1991-2013 Altera Corporation
+# Copyright (C) 1991-2010 Altera Corporation
 # Your use of Altera Corporation's design tools, logic functions 
 # and other software and tools, and its AMPP partner logic 
 # functions, and any output files from any of the foregoing 
@@ -16,16 +16,16 @@
 #
 # -------------------------------------------------------------------------- #
 #
-# Quartus II 64-Bit
-# Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-# Date created = 17:51:40  November 20, 2023
+# Quartus II
+# Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+# Date created = 06:11:11  November 28, 2023
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		filter_assignment_defaults.qdf
+#		task4_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -38,22 +38,13 @@
 
 set_global_assignment -name FAMILY "Cyclone III"
 set_global_assignment -name DEVICE AUTO
-set_global_assignment -name TOP_LEVEL_ENTITY filter
-set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:51:40  NOVEMBER 20, 2023"
+set_global_assignment -name TOP_LEVEL_ENTITY task4
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "06:11:11  NOVEMBER 28, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE rom_exp_sig_gen.sv
-set_global_assignment -name VERILOG_FILE ram_exp_sig_gen.v
-set_global_assignment -name SYSTEMVERILOG_FILE filter.sv
-set_global_assignment -name SYSTEMVERILOG_FILE exp_sig_gen.sv
-set_global_assignment -name VERILOG_FILE add_exp_sig_gen.v
-set_global_assignment -name SYSTEMVERILOG_FILE v2_filter.sv
-set_global_assignment -name SYSTEMVERILOG_FILE package_settings.sv
-set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name INCREMENTAL_COMPILATION OFF
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name SYSTEMVERILOG_FILE package_settings_v2.sv
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
