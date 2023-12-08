@@ -23,7 +23,7 @@ r(1) = p(1) + M*d(1);
 s(1) = r(1); 
 j = 2;
 while j < n+1
-    p(j) = p(j-1) + d(j);
+    p(j) = p(j-1) + d(j); 
     r(j) = p(j) + M*d(j); 
     s(j) = s(j-1) + r(j); 
     j = j+1;
