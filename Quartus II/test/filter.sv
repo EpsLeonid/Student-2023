@@ -44,9 +44,9 @@ module filter (
 	output wire [SIZE_FILTER_DATA+2:0] x0,
 	output wire [SIZE_FILTER_DATA+2:0] x5,
 	output wire [SIZE_FILTER_DATA+2:0] x10,
-	output wire [SIZE_FILTER_DATA+2:0] s1,
-	output wire [SIZE_FILTER_DATA+2:0] j,
-	output wire [SIZE_FILTER_DATA+2:0] p1
+	output wire [SIZE_FILTER_DATA+2:0] s,
+	output wire [SIZE_FILTER_DATA+2:0] p,
+	output wire [SIZE_FILTER_DATA+2:0] y1
 );
 //-----------------------------------------------------------------------------
 // Signal declarations
@@ -82,9 +82,9 @@ module filter (
 		.x0	(x0),
 		.x5	(x5),
 		.x10	(x10),
-		.s1		(s1),
-		.j		(j),
-		.p1		(p1));
+		.s		(s),
+		.p		(p),
+		.y1	(y1));
 /*
 	v3_filter FilterV3 (
 		.clk                                                  (clk),
