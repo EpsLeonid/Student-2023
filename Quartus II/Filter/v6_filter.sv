@@ -83,11 +83,11 @@ always @(posedge clk or negedge reset) begin
 		d5 <= d4;
 		d6 <= d5;
 		dk <= v0 - v13;
-		p <= dk - 13*d6;
+		p <= dk - k_6*d6;
 		q <= $signed(q) + $signed(p);
-		a <= 16*p;
+		a <= m1_6*p;
 		s <= $signed(s) + $signed(q) + $signed(a);
-		output_data <= s[SIZE_FILTER_DATA+3:5];
+		output_data <= $signed(s[SIZE_FILTER_DATA+3:5]);
 	end
 end
 endmodule

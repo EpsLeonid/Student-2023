@@ -62,7 +62,7 @@ always @(posedge clk or negedge reset) begin
 		d13 <= d12;
 		d <= d0 - d5 - d8 + d13;
 		p <= p + d;
-		r <= $signed(p) + 16*$signed(d);
+		r <= $signed(p) + M_1*$signed(d);
 		s <= s + r;
 		output_data <= s[SIZE_FILTER_DATA+4:6];
 	end
