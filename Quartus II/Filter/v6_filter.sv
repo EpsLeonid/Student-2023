@@ -1,4 +1,4 @@
-module v4_filter(
+module v6_filter(
 		input  wire												clk,
 		input  wire												reset,
 		input wire [SIZE_ADC_DATA-1:0]							input_data,
