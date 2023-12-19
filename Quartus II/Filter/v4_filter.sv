@@ -2,7 +2,7 @@ module v4_filter(
 		input  wire												clk,
 		input  wire												reset,
 		input wire [SIZE_ADC_DATA-1:0]							input_data,
-		output wire [SIZE_FILTER_DATA+3:0]						output_data);
+		output wire [SIZE_FILTER_DATA-1:0]						output_data);
 		
 
 reg [SIZE_ADC_DATA-1:0] v0;
@@ -87,7 +87,7 @@ always @(posedge clk or negedge reset) begin
 		q <= $signed(q) + $signed(p);
 		a <= 16*p;
 		s <= $signed(s) + $signed(q) + $signed(a);
-		output_data <= s;
+		output_data <= s[SIZE_FILTER_DATA+3:5];
 	end
 end
 endmodule

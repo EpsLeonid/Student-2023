@@ -27,10 +27,5 @@ package package_settings;
 	parameter DELAY_DATA                                     = 14;
 	parameter SIZE_TEST_COUNTER                              = 16;
 	parameter SIZE_TEST_RAM_ADDR                             = 7;
-	//v2_filter-----------------------------------------------------------------
-	parameter M_2                                            = 16;
-	parameter k_2                                            = 5;
-	parameter l_2                                            = 5;
-	//--------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 endpackage
