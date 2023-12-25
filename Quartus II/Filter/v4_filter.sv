@@ -1,4 +1,4 @@
-module v2_filter(
+module v4_filter(
 		input  wire												clk,
 		input  wire												reset,
 		input wire [SIZE_ADC_DATA-1:0]							input_data,
@@ -15,12 +15,16 @@ reg [SIZE_FILTER_DATA+2:0] x7;
 reg [SIZE_FILTER_DATA+2:0] x8;
 reg [SIZE_FILTER_DATA+2:0] x9;
 reg [SIZE_FILTER_DATA+2:0] x10;
-reg [SIZE_FILTER_DATA+2:0] d1;
+reg [SIZE_FILTER_DATA+2:0] x11;
+reg [SIZE_FILTER_DATA+2:0] x12;
+reg [SIZE_FILTER_DATA+2:0] x13;
+reg [SIZE_FILTER_DATA+2:0] x14;
+reg [SIZE_FILTER_DATA+2:0] d;
 reg [SIZE_FILTER_DATA+2:0] p;
 reg [SIZE_FILTER_DATA+3:0] r;
 reg [SIZE_FILTER_DATA+3:0] s;
 reg [SIZE_FILTER_DATA+3:0] s1;
-reg [SIZE_FILTER_DATA+2:0] d;
+
 
 always @(posedge clk or negedge reset) begin
 	if(!reset) begin
@@ -36,8 +40,11 @@ always @(posedge clk or negedge reset) begin
 		x8 <= 0;
 		x9 <= 0;
 		x10 <= 0;
+		x11 <= 0;
+		x12 <= 0;
+		x13 <= 0;
+		x14 <= 0;
 		d <= 0;
-		d1 <= 0;
 		p <= 0;
 		r <= 0;
 		s <= 0;
@@ -54,11 +61,14 @@ always @(posedge clk or negedge reset) begin
 		x8 <= x7;
 		x9 <= x8;
 		x10 <= x9;
-		d1 <= 2*x4;
-		d <= x0 + x10 - d1;
-		p <= p + d;
-		r <= $signed(p) + M_2*$signed(d);
-		s <= s + r;
+		x11 <= x10;
+		x12 <= x11;
+		x13 <= x12;
+		x14 <= x13;
+		d <= x0 - x5 - x9 + x14;
+		p <= $signed(p) + $signed(d);
+		r <= $signed(p) + M_4*$signed(d);
+		s <= $signed(s) + $signed(r);
 		s1 <= s;
 		output_data <= s1[SIZE_FILTER_DATA+3:5];
 	end

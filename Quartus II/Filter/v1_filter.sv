@@ -22,6 +22,7 @@ reg [SIZE_ADC_DATA+2:0] d13;
 reg [SIZE_FILTER_DATA+2:0] p;
 reg [SIZE_FILTER_DATA+4:0] r;
 reg [SIZE_FILTER_DATA+4:0] s;
+reg [SIZE_FILTER_DATA+4:0] s1;
 reg [SIZE_FILTER_DATA+2:0] d;
 
 always @(posedge clk or negedge reset) begin
@@ -45,6 +46,7 @@ always @(posedge clk or negedge reset) begin
 		p <= 0;
 		r <= 0;
 		s <= 0;
+		s1 <= 0;
 	end else begin
 		d0 <= input_data;
 		d1 <= d0;
@@ -64,7 +66,8 @@ always @(posedge clk or negedge reset) begin
 		p <= p + d;
 		r <= $signed(p) + M_1*$signed(d);
 		s <= s + r;
-		output_data <= s[SIZE_FILTER_DATA+4:6];
+		s1 <= s;
+		output_data <= s1[SIZE_FILTER_DATA+4:6];
 	end
 end
 endmodule
