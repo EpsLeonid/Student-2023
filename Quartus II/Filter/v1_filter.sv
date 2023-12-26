@@ -67,7 +67,7 @@ always @(posedge clk or negedge reset) begin
 		r <= $signed(p) + M_1*$signed(d);
 		s <= s + r;
 		s1 <= s;
-		output_data <= s1[SIZE_FILTER_DATA+4:5];
+		output_data <= s1[SIZE_FILTER_DATA+3:5];
 	end
 end
 endmodule
